@@ -3,9 +3,9 @@ using UnityEngine;
 [System.Serializable]
 public class Transaction
 {
-    public float userPayment;
+    public double userPayment;
     public string brands;
-    public float sumPayment;
+    public double sumPayment;
 }
 
 public class TransactionDB 

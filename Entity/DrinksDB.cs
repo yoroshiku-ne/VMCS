@@ -8,20 +8,21 @@ public class Drink
     public float price;
 }
 
+
 public class DrinksDB 
 {
     // Save drink data
-    public void SaveDrinkData(Drink drink)
+    public void SaveDrinkData(Drink drink, string brand)
     {
         string json = JsonUtility.ToJson(drink);
-        PlayerPrefs.SetString("DrinkData", json);
+        PlayerPrefs.SetString(brand, json);
         PlayerPrefs.Save();
     }
 
     // Load drink data
-    public Drink LoadDrinkData()
+    public Drink LoadDrinkData(string brand)
     {
-        string json = PlayerPrefs.GetString("DrinkData", "{}");
+        string json = PlayerPrefs.GetString(brand, "{}");
         return JsonUtility.FromJson<Drink>(json);
     }
 }
